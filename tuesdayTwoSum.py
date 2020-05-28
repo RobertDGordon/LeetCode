@@ -1,3 +1,11 @@
+# Create set
+# Add nums to set
+# Loop through set
+# 	if currentnum - target in set:
+# 		first = currentnum
+# 		second = (currentnum - target)
+# 		return [nums.index(first), nums.index(second)]
+
 def twoSum(nums, target):
     numset = {}
     for index, number in enumerate(nums):
