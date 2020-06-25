@@ -53,14 +53,14 @@ def count_planks(arr):
          else:
              if arr[i] == first1:
                  count1 += 1
-     first = 0
-     for i in range(len(arr)):
-         if (arr[i] %2) == 0:
-             if arr[i] != first:
-                 count2 += 1
-         else:
-             if arr[i] == first:
-                 count2 += 1
+    #  first = 0
+    #  for i in range(len(arr)):
+    #      if (arr[i] %2) == 0:
+    #          if arr[i] != first:
+    #              count2 += 1
+    #      else:
+    #          if arr[i] == first:
+    #              count2 += 1
      if count1 < count2:
          return count1
      else:
