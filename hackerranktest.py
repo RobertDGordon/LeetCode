@@ -104,3 +104,6 @@ def threeNumberSum(arr, target):
             result.append([num, int(second_num), int(target/2)]) #add to result
     print("flagged", flagged)
     return result
+
+    #time complexity: O(n2) quadratic time, using loop within a loop, can possibly improve by taking second loop out of first 
+    #space complexity: 0(n), linear space that increases depending on the size of the array, uses set/dict to check values, and returns 2d list
