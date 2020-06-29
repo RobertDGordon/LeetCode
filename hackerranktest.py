@@ -58,3 +58,6 @@ def balancedBrackets(string):
         return True
     else:
         return False
+
+    #time complexity: O(n) - looping n times, n for each character in string
+    #space complexity: O(1) - using counters to track each type of bracket, no arrays/lists
