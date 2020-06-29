@@ -23,3 +23,38 @@ def removeKthLinkedListNode(head, k):
 
     #time complexity: O(n) - looping until n value, n is the length of SLL
     #space complexity: O(1) - using two pointers to track memory addresses(nodes), and no arrays/lists
+
+def balancedBrackets(string):
+    #create counters for each bracket type (open and closed)
+    #O is open, C is closed
+    squareO = 0
+    curlyO = 0
+    smoothO = 0
+    squareC = 0
+    curlyC = 0
+    smoothC = 0
+    ors = 0 #counter for | (or operator), must be even at end
+
+    #loop over each character in string
+    for char in string:
+        #increment counters
+        if char == "[":
+            squareO += 1
+        if char == "{":
+            curlyO += 1
+        if char == "(":
+            smoothO += 1
+        if char == "]":
+            squareC += 1
+        if char == "}":
+            curlyC += 1
+        if char == ")":
+            smoothC += 1
+        if char == "|":
+            ors += 1
+    
+    #check if amount of open brackets is equal to closed brackets and even number of | operators
+    if squareO == squareC and curlyO == curlyC and smoothO == smoothC and ors%2 == 0:
+        return True
+    else:
+        return False
