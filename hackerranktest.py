@@ -107,3 +107,19 @@ def threeNumberSum(arr, target):
 
     #time complexity: O(n2) quadratic time, using loop within a loop, can possibly improve by taking second loop out of first 
     #space complexity: 0(n), linear space that increases depending on the size of the array, uses set/dict to check values, and returns 2d list
+
+def threeNumberSum2(arr, target):
+    tuples = []
+    available = {}
+    arr.sort()
+
+    for i in range(len(arr)):
+        available[arr[i]] = i
+
+    for i in range(len(arr) - 2):
+        for j in range(i + 1,len(arr) - 1):
+            need = target - arr[i] - arr[j]
+            if need in available and available[need] > j:
+                tuples.append([arr[i],arr[j],need])
+
+    return tuples
