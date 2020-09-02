@@ -14,7 +14,7 @@ def luckyNumbers (matrix):
             if min_row_num is None:
                 min_row_num = row_something
             if row_something > min_row_num:
-                 
+                pass
             if row_something < next_num:
                 min_num = row_something
                 print(min_num)
