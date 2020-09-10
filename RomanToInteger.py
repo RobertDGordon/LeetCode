@@ -14,43 +14,38 @@
 
 
 def romanToInt(s):
-    # firsthalf = ""
-    # secondhalf = ""
-    # marker = False
     result = 0
-    # for char in s:
-    #     if char == "I" and marker == False:
-    #         marker = True
-    #     if marker == False:
-    #         firsthalf += char
-    #     if marker == True:
-    #         secondhalf += char
     index = 0
     while index in range(len(s)):
-        # print("loop:", s[index], index)
         char = s[index]
         if char == "M":
             result += 1000
         elif char == "D":
             result += 500
         elif char == "C":
-            if s[index + 1] == "D":
-                result += 400
-                index += 1
-            elif s[index + 1] == "M":
-                result += 900
-                index += 1
+            if index + 1 < len(s):
+                if s[index + 1] == "D":
+                    result += 400
+                    index += 1
+                elif s[index + 1] == "M":
+                    result += 900
+                    index += 1
+                else:
+                    result += 100
             else:
                 result += 100
         elif char == "L":
             result += 50
         elif char == "X":
-            if s[index + 1] == "L":
-                result += 40
-                index += 1
-            elif s[index + 1] == "C":
-                result += 90
-                index += 1
+            if index + 1 < len(s):
+                if s[index + 1] == "L":
+                    result += 40
+                    index += 1
+                elif s[index + 1] == "C":
+                    result += 90
+                    index += 1
+                else:
+                    result += 10
             else:
                 result += 10
         elif char == "V":
@@ -70,6 +65,4 @@ def romanToInt(s):
         index += 1
     return(result)
 
-    # print(firsthalf, secondhalf)
-
-print(romanToInt("MCMXCIV"))
+print(romanToInt("MDLXX"))
