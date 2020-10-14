@@ -1,8 +1,22 @@
 #loop over string
-#count number of open
-#count number of closed
-#check if open > closed
-    #increment nest counter
-#check if open = closed
-    #if not return 0
-    #if true return open + nest
+#increment count if open
+#decriment count if closed
+#check if count is greater than nest
+    #set nest = count
+#return nest
+
+def maxDepth(s):
+    count = 0
+    nest = 0
+    for char in s:
+        if char == "(":
+            count += 1
+        elif char == ")":
+            count -= 1
+        if count > nest:
+            nest = count
+    return nest
+
+s = "()(()())"
+
+print(maxDepth(s))
