@@ -30,6 +30,18 @@ def longestCommonPrefix(strs):
         return(min(result))
 
 
-strs = ["a", "b", "c"]
+strs = ['flight', 'flower', 'flow']
 
-print('return', longestCommonPrefix(strs))
+# print('return', longestCommonPrefix(strs))
+
+def longestCommonPrefixFast(strs):
+    strs.sort()
+    result = ""
+    for x, y in zip(strs[0], strs[-1]):
+        print(x, y)
+        if x == y: 
+            result += x
+        else: break
+    return result
+
+print(longestCommonPrefixFast(strs))
