@@ -17,3 +17,18 @@
 # Write an efficient algorithm for the following assumptions:
 # N is an interger within the range [0..200,000]
 # string S consists only of the characters "a" and/or "b"
+
+# [baaaaa]
+# [baabaa]
+# [baaabbaabbba]
+# [bbaabbaabbaa]
+
+# loop through string
+# check each char
+    # if a increment a count
+        #reset b count (checking for consecutive a's)
+    # if b increment b count
+        #reset a count (checking for consecutive b's)
+    # if a or b = 3
+        # increment moves count
+        # reset counters
