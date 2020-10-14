@@ -7,8 +7,11 @@ def numJewelsInStones(J, S):
     jewels = []
     for jewel in J:
         jewels.append(jewel)
-    print(jewels)
+    for stone in S:
+        if stone in jewels:
+            count += 1
+    return count
 
 J = "abced"
-
-numJewelsInStones(J, '')
+S = "abd"
+print(numJewelsInStones(J, S))
