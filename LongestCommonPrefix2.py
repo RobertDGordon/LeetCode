@@ -6,25 +6,30 @@
 #return longest result from result array
 
 def longestCommonPrefix(strs):
+    if len(strs) == 0 or "" in strs:
+        return ""
+    elif len(strs) == 1: #leetcode is annoying
+        return strs[0]
     result = []
     for index in range(len(strs) - 1):
         word = strs[index]
         nextword = strs[index + 1]
-        print('words', word, nextword)
+        # print('words', word, nextword)
         #switch words based on length
         if len(word) > len(nextword):
             word, nextword = nextword, word
-            print('switched', word, nextword)
+            # print('switched', word, nextword)
         subresult = ''
         for ndex in range(len(word)):
             if word[ndex] == nextword[ndex]:
-                print('match:', word[ndex], '==', nextword[ndex])
+                # print('match:', word[ndex], '==', nextword[ndex])
                 subresult += word[ndex]
-            else:
-                break
         result.append(subresult)
-    print(min(result))
+    # print(result)
+    if len(result) > 0:
+        return(min(result))
 
-strs = ["flower","flow","flight", "fluxed", "flagrant", "flood"]
 
-longestCommonPrefix(strs)
+strs = ["a", "b", "c"]
+
+print('return', longestCommonPrefix(strs))
