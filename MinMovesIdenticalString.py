@@ -32,3 +32,32 @@
     # if a or b = 3
         # increment moves count
         # reset counters
+
+def minMove(s):
+    a = 0
+    b = 0
+    moves = 0
+    for c in s:
+        if c == 'a':
+            a += 1
+            b = 0
+        elif c == 'b':
+            a = 0
+            b += 1
+        if a == 3 or b == 3:
+            moves += 1
+            a = 0
+            b = 0
+    return moves
+
+s = 'baabab'
+
+assert minMove('baaaaa') == 1
+assert minMove('baaabbaabbba') == 2
+assert minMove('baabab') == 0
+assert minMove('aaabb') == 1
+assert minMove('baabb') == 0
+assert minMove('baaab') == 1
+assert minMove('baaaab') == 1
+assert minMove('baaaaab') == 1
+assert minMove('baaaaaab') == 2
