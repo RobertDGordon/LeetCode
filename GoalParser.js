@@ -23,4 +23,4 @@ const interpret = function (command) {
     
 }
 
-interpret("G()(al)")
+interpret("(al)G(al)()()G")
