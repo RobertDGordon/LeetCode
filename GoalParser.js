@@ -4,23 +4,23 @@
 
 const interpret = function (command) {
     response = "";
-
     for (var i = 0; i < command.length; i++){
         // console.log(command[i])
         if (command[i] === "G"){
-            response += "G"
+            response += "G";
         } else if (command[i] === "("){
             if (command[i + 1] === ")"){
                 response += "o";
                 //add pointer advance here
+                i++;
             } else if (command[i + 1] === "a"){
-                response += "al"
+                response += "al";
                 //add pointer advance here
+                i += 3;
             }
         }
     }
-    console.log(response)
-    
+    return(response)
 }
 
-interpret("(al)G(al)()()G")
+console.log(interpret("(al)G(al)()()G"))
