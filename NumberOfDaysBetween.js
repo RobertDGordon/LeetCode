@@ -7,7 +7,7 @@ const days = function(date){
     year = Number(date.slice(0,4) - 1) //need to subtract the current year, month, day?
     month = Number(date.slice(5,7) - 1)
     day = Number(date.slice(8,10))
-    console.log(year, month, day)
+    // console.log(year, month, day)
     totalDays = 0
     totalLeap = 0
     while (year >= 1900){
@@ -17,11 +17,10 @@ const days = function(date){
             // console.log(`Year ${year} is a leap year`)
             totalDays += 366
             totalLeap += 1
-            year --
         }else {
             totalDays += 365
-            year --
         }
+        year --
     }
     while (month > 0){
         thirtyOne = [1,3,5,7,8,10,12]
@@ -37,13 +36,15 @@ const days = function(date){
         month --
 
     }
-    console.log("Total leap years:", totalLeap)
-    return totalDays
+    // console.log("Total leap years:", totalLeap)
+    return totalDays + day
 }
 
-console.log(days("2020-12-07"))
+// console.log(days("2020-12-08"))
 
 var daysBetween = function (date1, date2) {
-
-    
+    num = days(date1) - days(date2)
+    return (num < 0) ? num * -1 : num; //check if number is negative, ensures return of positive integer
 }
+
+console.log(daysBetween("2020-12-05", "2020-12-05"))
