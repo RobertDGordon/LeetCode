@@ -7,7 +7,7 @@ const days = function(date){
     year = Number(date.slice(0,4)) //need to subtract the current year, month, day?
     month = Number(date.slice(5,7))
     day = Number(date.slice(8,10))
-    console.log(year, month, day)
+    // console.log(year, month, day)
     const daysInMonth = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     totalDays = 0
     totalLeap = 0
@@ -29,8 +29,11 @@ const days = function(date){
             totalDays += 365
         }
     }
-    return totalDays + day
+    console.log('days here', totalDays)
+    // return totalDays + day
 }
+
+days("2020-12-07")
 
 var daysBetween = function (date1, date2) {
     num = days(date1) - days(date2)
@@ -39,4 +42,4 @@ var daysBetween = function (date1, date2) {
 
 // console.log(daysBetween("2020-01-15", "2019-12-31"))
 
-console.log(daysBetween("2009-08-18", "2080-08-08"))
+// console.log(daysBetween("2009-08-18", "2080-08-08"))
